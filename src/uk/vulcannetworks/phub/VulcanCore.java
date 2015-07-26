@@ -43,7 +43,7 @@ public class VulcanCore extends JavaPlugin {
 					
 				}
 				
-			}, this.broadcasterDelay(), this.broadcasterRepeatEvery());
+			}, this.broadcasterDelay() * 20, this.broadcasterRepeatEvery() * 20);
 		}
 	}
 
@@ -112,11 +112,35 @@ public class VulcanCore extends JavaPlugin {
 	}
 	
 	public boolean opBypassBlock(){
-		return getConfig().getBoolean("listeners.block.ops-bypass");
+		return getConfig().getBoolean("listeners.block.op-bypass");
 	}
 	
 	public void setVariable(String path, Object variable){
 		getConfig().set(path, variable);
+	}
+	
+	public String getPlayer(){
+		return getConfig().getString("admin.particles.user");
+	}
+	
+	public int getParticle(){
+		return getConfig().getInt("admin.particles.particle");
+	}
+	
+	public boolean particleEnabled(){
+		return getConfig().getBoolean("admin.particles.enable");
+	}
+	
+	public boolean customChat(){
+		return getConfig().getBoolean("chat.custom-chat.enable");
+	}
+	
+	public String getBeforeName(){
+		return getConfig().getString("chat.custom-chat.beforename");
+	}
+	
+	public String getAfterName(){
+		return getConfig().getString("chat.custom-chat.aftername");
 	}
 	
 }

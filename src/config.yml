@@ -1,0 +1,49 @@
+##########################
+### PRIMARY HUB PLUGIN ###
+###   By VulcanGamer   ###
+##########################
+
+join:
+  joinmessage: "Welcome to this Hub Server, powered by PowerfulHub!"
+  teleport:
+    x: 0
+    y: 100
+    z: 100
+    world: world
+    enabled: true
+chat:
+  prefix: "[Hub]"
+  custom-chat:
+    enable: true
+    beforename: "<"
+    aftername: ">"
+    
+listeners:
+  teleport:
+    ifbelow:
+      enabled: true
+      y: 0
+  block:
+    breaking: false
+    placing: false
+    op-bypass: false
+
+#####################
+### Particle List ###
+#####################
+# 1 : MOB SPAWNER FLAMES
+# 2 : COLOURED DUST
+# 3 : ENDER SIGNAL
+# When setting up the particles, please put the number, not the name #
+
+admin:
+  particles:
+    user: "VulcanGamer"
+    particle: 1
+    enable: true
+    
+broadcaster:
+  delay: 0
+  every: 60
+  message: "Welcome to my Minecraft Server"
+  enable: true

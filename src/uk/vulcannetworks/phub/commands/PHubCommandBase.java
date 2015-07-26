@@ -1,5 +1,6 @@
 package uk.vulcannetworks.phub.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -40,6 +41,18 @@ public class PHubCommandBase implements CommandExecutor {
 					vc.reloadConfig();
 					p.sendMessage("Config reloaded!");
 					
+					return true;
+				}else{
+					p.sendMessage("Error running this command, are you authorised?");
+					return true;
+				}
+			}
+			
+			if(args[0].equalsIgnoreCase("version")){
+				if(p.hasPermission("phub.permissions.version")){
+					p.sendMessage("Running Version: " + ChatColor.RED + "" + ChatColor.BOLD + "DEVBUILD");
+					p.sendMessage("Bukkit Version ");
+					Bukkit.dispatchCommand(p, "version");
 					return true;
 				}else{
 					p.sendMessage("Error running this command, are you authorised?");

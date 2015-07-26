@@ -1,0 +1,13 @@
+name: PHub
+main: uk.vulcannetworks.phub.VulcanCore
+version: 0.1
+author: VulcanGamer
+description: Powerful Hub
+commands:
+  suite:
+    description: SuitePlugin
+permissions:
+  phub.permissions.reload:
+    description: reload
+  phub.permissions.version:
+    description: version
